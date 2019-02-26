@@ -2,14 +2,17 @@
   "name": "journo",
   "version": "0.0.1",
   "description": "Blog like it's 1999",
-  "bin": {"journo": "./bin/journo"},
+  "bin": {
+    "journo": "./bin/journo"
+  },
   "main": "journo.js",
   "dependencies": {
     "underscore": ">= 1.4.3",
     "marked": ">= 0.2.6",
     "mime": ">= 1.2.7",
     "highlight.js": ">= 7.3.0",
-    "rss": ">= 0.0.4"
+    "rss": ">= 0.0.4",
+    "snyk": "^1.134.2"
   },
   "devDependencies": {},
   "repository": "",
@@ -17,5 +20,10 @@
     "blog"
   ],
   "author": "Jeremy Ashkenas",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
